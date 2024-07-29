@@ -1,15 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Show the first gallery and start fading it out after a delay
-    setTimeout(() => {
-        document.getElementById('first-gallery').style.display = 'none'; // Hide first gallery
-        document.getElementById('text-container').style.display = 'block'; // Show text container
-    }, 5000); // Adjust timing to make sure the first gallery is visible long enough
+window.onload = () => {
+    const audioPlayer = document.querySelector('audio');
+    const estrofes = document.querySelectorAll('.estrofe');
+    const ground = document.querySelector('.ground');
+    const heads = document.querySelectorAll('.head');
+    const heart = document.querySelector('.heart');
+    const minihearts = document.querySelector('.minihearts');
+    const sky = document.querySelector('.sky');
+    const stars = document.querySelectorAll('.star');
+    const us = document.querySelector('.us');
 
-    // Calculate the total time for all verses to be displayed
-    const totalVerseTime = 33 * 1000; // Total time for all verses to appear
 
-    // Show the second gallery after the last verse
-    setTimeout(() => {
-        document.getElementById('second-gallery').style.display = 'flex'; // Show second gallery
-    }, totalVerseTime + 1000); // Add a little extra delay for a smooth transition
-});
+    // Add animation classes
+    ground.classList.add('animate');
+    heart.classList.add('animate');
+    minihearts.classList.add('animate');
+    sky.classList.add('animate');
+    us.classList.add('animate');
+
+    heads.forEach(head => {
+        head.classList.add('animate');
+    });
+
+    estrofes.forEach(estrofe => {
+        estrofe.classList.add('animate');
+    });
+
+    stars.forEach(star => {
+        star.classList.add('animate');
+    });
+};

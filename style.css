@@ -1,250 +1,801 @@
-body {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+@import url("https://fonts.googleapis.com/css?family=VT323");
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    padding: 0;
+}
+
+button {
+    opacity: 1;
+    -webkit-animation-name: blink;
+    animation-name: blink;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.sky {
+    list-style: none;
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    z-index: -1;
+}
+
+.sky.animate {
+    -webkit-animation-name: sky;
+    animation-name: sky;
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+    -webkit-animation-duration: 50s;
+    animation-duration: 50s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+
+
+.ground {
+    background: linear-gradient(to top right, #000d54, #000521);
+    display: flex;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
 }
 
-.animated-text {
-    font-size: 2em;
-    animation: fadeIn 2s ease-in-out infinite alternate;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.ground:after {
+    content: "";
+    background: linear-gradient(to top right, #040201, #190906);
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    height: 20%;
+    width: 200%;
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+.ground.animate:after {
+    -webkit-animation-name: ground;
+    animation-name: ground;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 12s;
+    animation-duration: 12s;
+}
+
+.minihearts {
+    list-style-type: none;
+    position: relative;
+    left: 57px;
+    opacity: 0;
+}
+
+.minihearts.animate {
+    -webkit-animation-name: minihearts;
+    animation-name: minihearts;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 14s;
+    animation-duration: 14s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+.miniheart {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: #f20e0e;
+    transform: rotate(210deg);
+}
+
+.miniheart:nth-of-type(1) {
+    top: -20px;
+    left: 10px;
+}
+
+.miniheart:nth-of-type(2) {
+    top: -60px;
+    left: 30px;
+}
+
+.miniheart:nth-of-type(3) {
+    top: -80px;
+    left: 10px;
+}
+
+.miniheart:nth-of-type(4) {
+    top: -120px;
+    left: 20px;
+}
+
+.miniheart::after,
+.miniheart::before {
+    content: "";
+    position: absolute;
+    background: #f20e0e;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.miniheart:before {
+    top: 5px;
+}
+
+.us {
+    height: 1px;
+    width: 1px;
+    margin: auto auto 250px auto;
+    display: flex;
+    flex-flow: row;
+    position: relative;
+}
+
+.us.animate {
+    -webkit-animation-name: us;
+    animation-name: us;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.me,
+.you {
+    display: grid;
+    grid-template-areas: "......... head .........." "arm__left body arm__right" "leg__left .... leg__right";
+}
+
+.me .head,
+.you .head {
+    background-color: #f7ffaf;
+    grid-area: head;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    position: relative;
+}
+
+.me .head.animate:after,
+.me .head.animate:before,
+.you .head.animate:after,
+.you .head.animate:before {
+    -webkit-animation-name: eyes;
+    animation-name: eyes;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.me .head:after,
+.me .head:before,
+.you .head:after,
+.you .head:before {
+    content: "";
+    width: 4px;
+    height: 6px;
+    background-color: #222;
+    position: absolute;
+    top: 5px;
+    z-index: 2;
+}
+
+.me .head:after,
+.you .head:after {
+    left: 15%;
+}
+
+.me .head:before,
+.you .head:before {
+    right: 15%;
+}
+
+.me .body,
+.you .body {
+    background-color: #f7ffaf;
+    grid-area: body;
+    height: 50px;
+    width: 30px;
+}
+
+.me .arm__left,
+.you .arm__left {
+    background-color: #f7ffaf;
+    grid-area: arm__left;
+    height: 40px;
+    width: 12px;
+}
+
+.me .arm__right,
+.you .arm__right {
+    background-color: #f7ffaf;
+    grid-area: arm__right;
+    height: 40px;
+    width: 12px;
+}
+
+.me .leg__left,
+.you .leg__left {
+    background-color: #f7ffaf;
+    grid-area: leg__left;
+    height: 50px;
+    width: 10px;
+    position: relative;
+    right: -15px;
+}
+
+.me .leg__right,
+.you .leg__right {
+    background-color: #f7ffaf;
+    grid-area: leg__right;
+    height: 50px;
+    width: 10px;
+    position: relative;
+    left: -10px;
+}
+
+.me {
+    margin-right: 10px;
+}
+
+.me .hair {
+    position: absolute;
+    background-color: #444;
+    width: 100%;
+    height: 10px;
+    top: -7px;
+    border-radius: 3px 6px 9px 12px;
+}
+
+.me .body {
+    background-color: #42f483;
+    position: relative;
+}
+
+.me .body:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 10px solid #f7ffaf;
+    border-bottom: transparent;
+    z-index: 2;
+}
+
+.me .arm__left {
+    transform: rotate(15deg);
+    position: relative;
+}
+
+.me .arm__left:before {
+    content: "";
+    background-color: #42f483;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+}
+
+.me .arm__right {
+    transform: rotate(-35deg);
+    position: relative;
+}
+
+.me .arm__right:before {
+    content: "";
+    background-color: #42f483;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+}
+
+.me .leg__left {
+    background-color: #333;
+}
+
+.me .leg__right {
+    background-color: #333;
+}
+
+.you {
+    margin-left: 10px;
+}
+
+.you .head {
+    position: relative;
+}
+
+.you .hair {
+    position: relative;
+}
+
+.you .hair:after,
+.you .hair:before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    background-color: #474025;
+    border-radius: 10px 10px 0 0;
+    z-index: -1;
+    width: 40px;
+    height: 25px;
+}
+
+.you .body {
+    position: relative;
+}
+
+.you .body:before {
+    content: "";
+    background-color: #444;
+    width: 100%;
+    height: 130%;
+    border-radius: 0 0 -20% -20%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.you .body:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 14px solid #f7ffaf;
+    border-bottom: transparent;
+    z-index: 2;
+}
+
+.you .dress {
+    position: absolute;
+    left: -13px;
+    top: 10px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid #444;
+    border-top: transparent;
+    z-index: 2;
+}
+
+.you .arm__left {
+    transform: rotate(35deg);
+}
+
+.you .arm__right {
+    transform: rotate(-30deg);
+}
+
+.you .arm__right:after {
+    content: "";
+    width: 2px;
+    height: 300px;
+    background-color: #fafafa;
+    bottom: -50px;
+    right: -90px;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: -1;
+}
+
+
+@media (max-width: 768px) {
+
+    .me,
+    .you {
+        grid-template-areas:
+            "head"
+            "body"
+            "arm__left"
+            "arm__right"
+            "leg__left"
+            "leg__right";
     }
 
-    to {
-        opacity: 1;
+    .me .head,
+    .you .head {
+        height: 15px;
+        width: 15px;
+    }
+
+    .me .body,
+    .you .body {
+        height: 40px;
+        width: 25px;
+    }
+
+    .me .arm__left,
+    .you .arm__left,
+    .me .arm__right,
+    .you .arm__right {
+        height: 30px;
+        width: 10px;
+    }
+
+    .me .leg__left,
+    .you .leg__left,
+    .me .leg__right,
+    .you .leg__right {
+        height: 40px;
+        width: 8px;
+    }
+
+    button {
+        font-size: 8vmin;
+        letter-spacing: 2vmin;
+        padding: 1.5vmin;
+    }
+
+    .poem {
+        top: 20%;
+        left: 2%;
+        font-size: 0.9rem;
+    }
+
+    .sky {
+        width: 150vw;
+        height: 150vh;
+    }
+
+    .minihearts {
+        left: 30px;
     }
 }
+
 
 .heart {
-    width: 100px;
-    height: 90px;
-    position: relative;
-    animation: heartbeat 1.5s infinite;
+    position: fixed;
+    top: 20%;
+    left: 57%;
+    z-index: 2;
 }
 
-.heart:before,
-.heart:after {
+.heart.animate {
+    -webkit-animation-name: heart;
+    animation-name: heart;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.heart:after,
+.heart:before {
     content: "";
-    width: 100px;
-    height: 180px;
-    border-radius: 100px 100px 0 0;
-    background: red;
     position: absolute;
-    top: 0;
-    left: 50px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
+    width: 150px;
+    height: 190px;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 60%;
+    background-color: #f20e0e;
+    transform: rotate(-65.5deg);
 }
 
-.heart:after {
-    left: -50px;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+.heart:before {
+    transform: rotate(65.5deg);
+    left: 110px;
 }
 
-@keyframes heartbeat {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
+.poem {
+    color: #fafafa;
+    font-family: "Space mono", monospace;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    text-shadow: 3px 3px 3px rgba(0, 5, 33, 0.4);
 }
 
-.galleryrow {
-    margin-top: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.poem .title {
+    font-size: 1.3rem;
 }
 
-.image-item {
-    animation: moveUp 1s ease-in-out forwards;
-}
-
-.fixed-size {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes moveUp {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-}
-
-#first-gallery {
-    animation: fadeOutGallery 2s ease-in-out forwards;
-}
-
-@keyframes fadeOutGallery {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-#text-container {
-    display: none;
-    animation: revealText 2s ease-in-out forwards;
-    margin-top: 120px;
-}
-
-@keyframes revealText {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.verse {
-    font-size: 1.2em;
-    color: #fff;
+.poem .estrofe {
+    margin-bottom: 1.5rem;
     opacity: 0;
-    margin: 10px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: revealVerse 1s ease-in-out forwards;
 }
 
-@keyframes revealVerse {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.poem .estrofe.animate {
+    -webkit-animation-name: estrofe;
+    animation-name: estrofe;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-.verses p:nth-child(1) {
-    animation-delay: 0.5s;
+.poem .estrofe:nth-of-type(1) {
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
 }
 
-.verses p:nth-child(2) {
-    animation-delay: 2s;
-}
-
-.verses p:nth-child(3) {
-    animation-delay: 3.5s;
-}
-
-.verses p:nth-child(4) {
-    animation-delay: 5s;
-}
-
-.verses p:nth-child(5) {
-    animation-delay: 6.5s;
-}
-
-.verses p:nth-child(6) {
-    animation-delay: 8s;
-}
-
-.verses p:nth-child(7) {
-    animation-delay: 9.5s;
-}
-
-.verses p:nth-child(8) {
-    animation-delay: 11s;
-}
-
-.verses p:nth-child(9) {
-    animation-delay: 12.5s;
-}
-
-.verses p:nth-child(10) {
-    animation-delay: 14s;
-}
-
-.verses p:nth-child(11) {
-    animation-delay: 15.5s;
-}
-
-.verses p:nth-child(12) {
-    animation-delay: 17s;
-}
-
-.verses p:nth-child(13) {
-    animation-delay: 18.5s;
-}
-
-.verses p:nth-child(14) {
+.poem .estrofe:nth-of-type(2) {
+    -webkit-animation-delay: 20s;
     animation-delay: 20s;
 }
 
-.verses p:nth-child(15) {
-    animation-delay: 21.5s;
+.poem .estrofe:nth-of-type(3) {
+    -webkit-animation-delay: 30s;
+    animation-delay: 30s;
 }
 
-.verses p:nth-child(16) {
-    animation-delay: 23s;
+.poem .estrofe:nth-of-type(4) {
+    -webkit-animation-delay: 40s;
+    animation-delay: 40s;
 }
 
-.verses p:nth-child(17) {
-    animation-delay: 24.5s;
+.poem .estrofe:nth-of-type(5) {
+    -webkit-animation-delay: 50s;
+    animation-delay: 50s;
 }
 
-.verses p:nth-child(18) {
-    animation-delay: 26s;
+.poem .estrofe:nth-of-type(6) {
+    -webkit-animation-delay: 60s;
+    animation-delay: 60s;
 }
 
-.verses p:nth-child(19) {
-    animation-delay: 27.5s;
+.poem .verse {
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
-.verses p:nth-child(20) {
-    animation-delay: 29s;
+button {
+    font-family: "VT323", monospace;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border: 10px dashed #f20e0e;
+    font-size: 10vmin;
+    letter-spacing: 3vmin;
+    padding: 2vmin;
+    text-align: center;
+    color: #fafafa;
+    text-transform: uppercase;
+    background-color: #f54d4d;
 }
 
-.verses p:nth-child(21) {
-    animation-delay: 31.5s;
+.about {
+    font-family: "Space mono", monospace;
+    font-size: 1.1rem;
+    position: fixed;
+    bottom: 1.1rem;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    text-align: center;
+    color: #fafafa;
 }
 
-.verses p:nth-child(22) {
-    animation-delay: 33s;
+@-webkit-keyframes ground {
+    from {
+        height: 20%;
+    }
+
+    to {
+        height: 0;
+    }
 }
 
-#second-gallery {
-    display: none;
-    opacity: 0;
-    animation: fadeInSecondGallery 1s ease-in-out 1s forwards;
+@keyframes ground {
+    from {
+        height: 20%;
+    }
+
+    to {
+        height: 0;
+    }
 }
 
-@keyframes fadeInSecondGallery {
+@-webkit-keyframes estrofe {
     from {
         opacity: 0;
     }
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes estrofe {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes sky {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes sky {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+@-webkit-keyframes us {
+    from {
+        bottom: 0;
+        right: 0;
+        transform: rotate(0);
+    }
+
+    to {
+        bottom: 20%;
+        right: -10%;
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes us {
+    from {
+        bottom: 0;
+        right: 0;
+        transform: rotate(0);
+    }
+
+    to {
+        bottom: 20%;
+        right: -10%;
+        transform: rotate(5deg);
+    }
+}
+
+@-webkit-keyframes heart {
+    from {
+        top: 20%;
+        left: 57%;
+        transform: rotate(0);
+    }
+
+    to {
+        top: 10%;
+        left: 70%;
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes heart {
+    from {
+        top: 20%;
+        left: 55%;
+        transform: rotate(0);
+    }
+
+    to {
+        top: 10%;
+        left: 65%;
+        transform: rotate(5deg);
+    }
+}
+
+@-webkit-keyframes eyes {
+    0% {
+        width: 4px;
+        height: 6px;
+    }
+
+    50% {
+        width: 4px;
+        height: 2px;
+    }
+
+    100% {
+        width: 4px;
+        height: 6px;
+    }
+}
+
+@keyframes eyes {
+    0% {
+        width: 4px;
+        height: 6px;
+    }
+
+    50% {
+        width: 4px;
+        height: 2px;
+    }
+
+    100% {
+        width: 4px;
+        height: 6px;
+    }
+}
+
+@-webkit-keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.75;
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.75;
+    }
+}
+
+@-webkit-keyframes minihearts {
+    0% {
+        opacity: 0;
+        left: 57px;
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        left: -57px;
+        top: -100px;
+    }
+
+    100% {
+        opacity: 0;
+        left: -157px;
+        top: -200px;
+    }
+}
+
+@keyframes minihearts {
+    0% {
+        opacity: 0;
+        left: 57px;
+        top: 0;
+    }
+
+    50% {
+        opacity: 1;
+        left: -57px;
+        top: -100px;
+    }
+
+    100% {
+        opacity: 0;
+        left: -157px;
+        top: -200px;
     }
 }

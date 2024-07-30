@@ -1,5 +1,4 @@
-window.onload = () => {
-    const audioPlayer = document.querySelector('audio');
+document.addEventListener('DOMContentLoaded', () => {
     const estrofes = document.querySelectorAll('.estrofe');
     const ground = document.querySelector('.ground');
     const heads = document.querySelectorAll('.head');
@@ -28,4 +27,9 @@ window.onload = () => {
     stars.forEach(star => {
         star.classList.add('animate');
     });
-};
+
+    const music = document.getElementById('background-music');
+    music.play();
+
+
+});

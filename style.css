@@ -9,20 +9,8 @@
     padding: 0;
 }
 
-button {
-    opacity: 1;
-    -webkit-animation-name: blink;
-    animation-name: blink;
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-    -webkit-animation-iteration-count: 3;
-    animation-iteration-count: 3;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+html {
+    overflow: hidden;
 }
 
 .sky {
@@ -43,8 +31,6 @@ button {
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
-
-
 
 .ground {
     background: linear-gradient(to top right, #000d54, #000521);
@@ -157,320 +143,13 @@ button {
     animation-fill-mode: forwards;
 }
 
-.me,
-.you {
-    display: grid;
-    grid-template-areas: "......... head .........." "arm__left body arm__right" "leg__left .... leg__right";
-}
-
-.me .head,
-.you .head {
-    background-color: #f7ffaf;
-    grid-area: head;
-    height: 20px;
-    width: 20px;
-    margin: auto;
-    position: relative;
-}
-
-.me .head.animate:after,
-.me .head.animate:before,
-.you .head.animate:after,
-.you .head.animate:before {
-    -webkit-animation-name: eyes;
-    animation-name: eyes;
-    -webkit-animation-duration: 4s;
-    animation-duration: 4s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-.me .head:after,
-.me .head:before,
-.you .head:after,
-.you .head:before {
-    content: "";
-    width: 4px;
-    height: 6px;
-    background-color: #222;
-    position: absolute;
-    top: 5px;
-    z-index: 2;
-}
-
-.me .head:after,
-.you .head:after {
-    left: 15%;
-}
-
-.me .head:before,
-.you .head:before {
-    right: 15%;
-}
-
-.me .body,
-.you .body {
-    background-color: #f7ffaf;
-    grid-area: body;
-    height: 50px;
-    width: 30px;
-}
-
-.me .arm__left,
-.you .arm__left {
-    background-color: #f7ffaf;
-    grid-area: arm__left;
-    height: 40px;
-    width: 12px;
-}
-
-.me .arm__right,
-.you .arm__right {
-    background-color: #f7ffaf;
-    grid-area: arm__right;
-    height: 40px;
-    width: 12px;
-}
-
-.me .leg__left,
-.you .leg__left {
-    background-color: #f7ffaf;
-    grid-area: leg__left;
-    height: 50px;
-    width: 10px;
-    position: relative;
-    right: -15px;
-}
-
-.me .leg__right,
-.you .leg__right {
-    background-color: #f7ffaf;
-    grid-area: leg__right;
-    height: 50px;
-    width: 10px;
-    position: relative;
-    left: -10px;
-}
-
-.me {
-    margin-right: 10px;
-}
-
-.me .hair {
-    position: absolute;
-    background-color: #444;
-    width: 100%;
-    height: 10px;
-    top: -7px;
-    border-radius: 3px 6px 9px 12px;
-}
-
-.me .body {
-    background-color: #42f483;
-    position: relative;
-}
-
-.me .body:after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    top: 0px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 10px solid #f7ffaf;
-    border-bottom: transparent;
-    z-index: 2;
-}
-
-.me .arm__left {
-    transform: rotate(15deg);
-    position: relative;
-}
-
-.me .arm__left:before {
-    content: "";
-    background-color: #42f483;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    left: 0;
-}
-
-.me .arm__right {
-    transform: rotate(-35deg);
-    position: relative;
-}
-
-.me .arm__right:before {
-    content: "";
-    background-color: #42f483;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    left: 0;
-}
-
-.me .leg__left {
-    background-color: #333;
-}
-
-.me .leg__right {
-    background-color: #333;
-}
-
-.you {
-    margin-left: 10px;
-}
-
-.you .head {
-    position: relative;
-}
-
-.you .hair {
-    position: relative;
-}
-
-.you .hair:after,
-.you .hair:before {
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: -10px;
-    background-color: #474025;
-    border-radius: 10px 10px 0 0;
-    z-index: -1;
-    width: 40px;
-    height: 25px;
-}
-
-.you .body {
-    position: relative;
-}
-
-.you .body:before {
-    content: "";
-    background-color: #444;
-    width: 100%;
-    height: 130%;
-    border-radius: 0 0 -20% -20%;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-}
-
-.you .body:after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    top: 0px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 14px solid #f7ffaf;
-    border-bottom: transparent;
-    z-index: 2;
-}
-
-.you .dress {
-    position: absolute;
-    left: -13px;
-    top: 10px;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 60px solid #444;
-    border-top: transparent;
-    z-index: 2;
-}
-
-.you .arm__left {
-    transform: rotate(35deg);
-}
-
-.you .arm__right {
-    transform: rotate(-30deg);
-}
-
-.you .arm__right:after {
-    content: "";
-    width: 2px;
-    height: 300px;
-    background-color: #fafafa;
-    bottom: -50px;
-    right: -90px;
-    transform: rotate(45deg);
-    position: absolute;
-    z-index: -1;
-}
-
-
-@media (max-width: 768px) {
-
-    .me,
-    .you {
-        grid-template-areas:
-            "head"
-            "body"
-            "arm__left"
-            "arm__right"
-            "leg__left"
-            "leg__right";
-    }
-
-    .me .head,
-    .you .head {
-        height: 15px;
-        width: 15px;
-    }
-
-    .me .body,
-    .you .body {
-        height: 40px;
-        width: 25px;
-    }
-
-    .me .arm__left,
-    .you .arm__left,
-    .me .arm__right,
-    .you .arm__right {
-        height: 30px;
-        width: 10px;
-    }
-
-    .me .leg__left,
-    .you .leg__left,
-    .me .leg__right,
-    .you .leg__right {
-        height: 40px;
-        width: 8px;
-    }
-
-    button {
-        font-size: 8vmin;
-        letter-spacing: 2vmin;
-        padding: 1.5vmin;
-    }
-
-    .poem {
-        top: 20%;
-        left: 2%;
-        font-size: 0.9rem;
-    }
-
-    .sky {
-        width: 150vw;
-        height: 150vh;
-    }
-
-    .minihearts {
-        left: 30px;
-    }
-}
-
-
 .heart {
     position: fixed;
-    top: 20%;
+    top: 55%;
     left: 57%;
     z-index: 2;
+    width: 250px;
+    height: 250px;
 }
 
 .heart.animate {
@@ -484,30 +163,15 @@ button {
     animation-fill-mode: forwards;
 }
 
-.heart:after,
-.heart:before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 190px;
-    border-top-left-radius: 60%;
-    border-top-right-radius: 60%;
-    background-color: #f20e0e;
-    transform: rotate(-65.5deg);
-}
-
-.heart:before {
-    transform: rotate(65.5deg);
-    left: 110px;
-}
-
 .poem {
     color: #fafafa;
     font-family: "Space mono", monospace;
     position: absolute;
     top: 10%;
     left: 5%;
+    right: 5%;
     text-shadow: 3px 3px 3px rgba(0, 5, 33, 0.4);
+    overflow-wrap: break-word;
 }
 
 .poem .title {
@@ -561,21 +225,6 @@ button {
 .poem .verse {
     font-size: 1rem;
     line-height: 1.5rem;
-}
-
-button {
-    font-family: "VT323", monospace;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    border: 10px dashed #f20e0e;
-    font-size: 10vmin;
-    letter-spacing: 3vmin;
-    padding: 2vmin;
-    text-align: center;
-    color: #fafafa;
-    text-transform: uppercase;
-    background-color: #f54d4d;
 }
 
 .about {
@@ -680,83 +329,29 @@ button {
 
 @-webkit-keyframes heart {
     from {
-        top: 20%;
+        top: 55%;
         left: 57%;
         transform: rotate(0);
     }
 
     to {
-        top: 10%;
-        left: 70%;
+        top: 20%;
+        left: 65%;
         transform: rotate(5deg);
     }
 }
 
 @keyframes heart {
     from {
-        top: 20%;
-        left: 55%;
+        top: 55%;
+        left: 57%;
         transform: rotate(0);
     }
 
     to {
-        top: 10%;
+        top: 20%;
         left: 65%;
         transform: rotate(5deg);
-    }
-}
-
-@-webkit-keyframes eyes {
-    0% {
-        width: 4px;
-        height: 6px;
-    }
-
-    50% {
-        width: 4px;
-        height: 2px;
-    }
-
-    100% {
-        width: 4px;
-        height: 6px;
-    }
-}
-
-@keyframes eyes {
-    0% {
-        width: 4px;
-        height: 6px;
-    }
-
-    50% {
-        width: 4px;
-        height: 2px;
-    }
-
-    100% {
-        width: 4px;
-        height: 6px;
-    }
-}
-
-@-webkit-keyframes blink {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0.75;
-    }
-}
-
-@keyframes blink {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0.75;
     }
 }
 
@@ -797,5 +392,230 @@ button {
         opacity: 0;
         left: -157px;
         top: -200px;
+    }
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1024px) {
+    .heart {
+        width: 250px;
+        height: 250px;
+        top: 70%;
+        left: 10%;
+    }
+
+    @-webkit-keyframes heart {
+        from {
+            top: 70%;
+            left: 10%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 15%;
+            left: 65%;
+            transform: rotate(5deg);
+        }
+    }
+
+    @keyframes heart {
+        from {
+            top: 70%;
+            left: 10%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 15%;
+            left: 65%;
+            transform: rotate(5deg);
+        }
+    }
+
+    .poem {
+        font-size: 1rem;
+        top: 10%;
+        left: 5%;
+    }
+
+    .poem .title {
+        font-size: 1.2rem;
+    }
+
+    .poem .verse {
+        font-size: 0.9rem;
+    }
+
+    .about {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heart {
+        width: 150px;
+        height: 150px;
+        top: 80%;
+        left: 10%;
+    }
+
+    .poem {
+        font-size: 0.9rem;
+        top: 10%;
+        left: 5%;
+    }
+
+    .poem .title {
+        font-size: 1rem;
+    }
+
+    .poem .verse {
+        font-size: 0.9rem;
+    }
+
+    .about {
+        font-size: 0.9rem;
+    }
+
+    .sky {
+        width: 150vw;
+        height: 150vh;
+    }
+
+    .ground:after {
+        height: 10%;
+    }
+
+    @-webkit-keyframes heart {
+        from {
+            top: 80%;
+            left: 10%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 20%;
+            left: 45%;
+            transform: rotate(5deg);
+        }
+    }
+
+    @keyframes heart {
+        from {
+            top: 80%;
+            left: 10%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 20%;
+            left: 45%;
+            transform: rotate(5deg);
+        }
+    }
+
+    @-webkit-keyframes ground {
+        from {
+            height: 10%;
+        }
+
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes ground {
+        from {
+            height: 10%;
+        }
+
+        to {
+            height: 0;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .heart {
+        width: 100px;
+        height: 100px;
+        top: 85%;
+        left: 15%;
+    }
+
+    @-webkit-keyframes heart {
+        from {
+            top: 85%;
+            left: 15%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 23%;
+            left: 55%;
+            transform: rotate(5deg);
+        }
+    }
+
+    @keyframes heart {
+        from {
+            top: 85%;
+            left: 15%;
+            transform: rotate(0);
+        }
+
+        to {
+            top: 23%;
+            left: 55%;
+            transform: rotate(5deg);
+        }
+    }
+
+    .poem {
+        font-size: 0.8rem;
+        top: 10%;
+        left: 5%;
+    }
+
+    .poem .title {
+        font-size: 0.9rem;
+    }
+
+    .poem .verse {
+        font-size: 0.7rem;
+    }
+
+    .about {
+        font-size: 0.8rem;
+    }
+
+    .sky {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .ground:after {
+        height: 5%;
+    }
+
+    @-webkit-keyframes ground {
+        from {
+            height: 5%;
+        }
+
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes ground {
+        from {
+            height: 5%;
+        }
+
+        to {
+            height: 0;
+        }
     }
 }

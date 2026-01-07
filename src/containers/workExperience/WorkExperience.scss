@@ -1,0 +1,51 @@
+.experience-cards-div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 1rem 1rem;
+  justify-items: center; /* center items when a row has fewer items */
+}
+
+@media (max-width: 1024px) {
+  .experience-cards-div {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-cards-div {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.75rem 0.75rem;
+  }
+}
+
+.experience-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+.experience-container {
+  display: flex;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
+}
+
+.experience-container > * {
+  flex: 1;
+}
+
+/* Media Query */
+
+@media (max-width: 1380px) {
+  .experience-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+}

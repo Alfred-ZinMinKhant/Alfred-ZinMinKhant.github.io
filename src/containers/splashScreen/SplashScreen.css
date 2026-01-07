@@ -1,0 +1,78 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.splash-animation-container {
+  width: 80%;
+  max-width: 600px; /* cap the animation width so it's not too large */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Ensure the Lottie output scales to the container */
+.splash-animation-container > div {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 600px;
+}
+
+.splash-animation-container svg,
+.splash-animation-container canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 60vh;
+}
+
+.splash-title-container {
+  font-size: 2.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+.splash-title {
+  font-family: "Agustina Regular", cursive;
+  font-weight: bold;
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .splash-animation-container {
+    height: 40vh;
+  }
+  .splash-title-container {
+    font-size: 1.8rem;
+  }
+  .splash-title {
+    padding: 0 12px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .splash-animation-container {
+    height: 32vh;
+  }
+  .splash-title-container {
+    font-size: 1.4rem;
+  }
+  .splash-title {
+    padding: 0 8px;
+    font-size: 1.25rem;
+  }
+  .splash-container {
+    padding: 1rem 0.5rem;
+  }
+}

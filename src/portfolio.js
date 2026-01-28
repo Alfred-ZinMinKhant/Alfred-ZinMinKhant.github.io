@@ -10,11 +10,24 @@ import issaraLogo from "./assets/images/issaraLogo.png"
 import freelanceLogo from "./assets/images/freelancelogo.png";
 import wunderfauksLogo from "./assets/images/wunderfauksLogo.jpeg";
 import scwLogo from "./assets/images/scwLogo.jpg";
-import saayaHealthLogo from "./assets/images/saayaHealthLogo.webp";
-import nextuLogo from "./assets/images/nextuLogo.webp";
-import codeInLogo from "./assets/images/codeInLogo.webp";
+import mvista from "./assets/images/mvista.webp"
+import nextevo from "./assets/images/nextevo.webp"
+import nextevo1 from "./assets/images/nextevo1.webp"
+import orangeclove from "./assets/images/orangeclove.png"
+import postman from "./assets/images/postman.webp"
+import rwc from "./assets/images/rwc.webp"
+import workervoice from "./assets/images/workervoice.png"
+import cascade from "./assets/images/cascade.png"
+import ilm from "./assets/images/ilm.png"
+import goldendreams from "./assets/images/goldendreams.png"
+import issarainstitute from "./assets/images/issarainstitute.png"
+import booppa from "./assets/images/booppa.png"
+import Deloitte from "./assets/images/Deloitte.jpeg"
+import myt from "./assets/images/myt.png"
+
+
 import googleAssistantLogo from "./assets/images/googleAssistantLogo.webp";
-import pwaLogo from "./assets/images/pwaLogo.webp";
+
 
 // Splash Screen
 
@@ -32,7 +45,7 @@ const illustration = {
 
 const greeting = {
   username: "Zin Min Khant",
-  title: "Hi all, I'm Alfred",
+  title: "Hello, I'm Alfred",
   subTitle: emoji(`Dynamic Senior Full Stack Developer with 7+ years of full-stack experience, specializing in e-commerce, responsive design, and blockchain integration. Expert in Vue.js, React.js, and Node.js, with a strong record of delivering secure, scalable, high-performance applications, including Ethereum-based dApps. Proven leader in full-cycle projects and international team collaboration, focused on building user-centric solutions aligned with modern web standards.`),
   resumeLink:
     "https://drive.google.com/file/d/1fa4Ed-af-frU4idDKKANDXPnKYzKWl69/view", // Set to empty to hide the button
@@ -259,23 +272,23 @@ const techStack = {
   experience: [
   {
     Stack: "Frontend Engineering & UI/UX",
-    progressPercentage: "98%"
+    progressPercentage: "100%"
   },
   {
     Stack: "Backend Engineering (Node.js, Django, APIs)",
-    progressPercentage: "98%"
+    progressPercentage: "100%"
   },
   {
     Stack: "Full-Stack Architecture & Integration",
-    progressPercentage: "85%"
+    progressPercentage: "95%"
   },
   {
     Stack: "Cloud, DevOps & Infrastructure",
-    progressPercentage: "80%"
+    progressPercentage: "90%"
   },
   {
     Stack: "Blockchain & Web3 Development",
-    progressPercentage: "75%"
+    progressPercentage: "85%"
   }
 ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -374,76 +387,76 @@ const bigProjects = {
     // Commercial Projects
     // =======================
     {
-      image: nextuLogo,
+      image: mvista,
       projectName: "M-Vista E-Commerce Platform",
       projectDesc:
         "A full-featured e-commerce platform with secure payment gateway integration, optimized UX, and a scalable backend architecture.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://m-vista.com/" }]
     },
     {
-      image: nextuLogo,
+      image: orangeclove,
       projectName: "Orange Clove Catering Singapore",
       projectDesc:
         "A high-traffic catering website designed to showcase services, manage complex menus, and ensure full mobile responsiveness.",
-      footerLink: [{ name: "Visit Website", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://www.orangeclove.com.sg/" }]
     },
     {
-      image: nextuLogo,
+      image: postman,
       projectName: "My Postman Singapore",
       projectDesc:
         "A Postman review and feedback platform allowing users to search by postal code, optimized for fast data retrieval at scale.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://www.singpost.com/" }]
     },
     {
-      image: nextuLogo,
+      image: rwc,
       projectName: "RWC Games & Promo Redeem Platform",
       projectDesc:
         "Interactive games and a promotional reward redemption system designed to increase campaign engagement and user retention.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://stardreamcruises.com/en-th" }]
     },
     {
-      image: nextuLogo,
+      image: booppa,
       projectName: "Ethereum-Based dApp Platform",
       projectDesc:
         "A decentralized web application featuring Ethereum smart contracts, MetaMask wallet integration, and secure on-chain transactions.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name:  "Visit Website", url: "booppa.io" }]
     },
 
     // =======================
     // Nextevo Projects (2)
     // =======================
     {
-      image: nextuLogo,
+      image: nextevo,
       projectName: "Nextevo – Sustainable Fashion Platform (I)",
       projectDesc:
         "A responsive, performance-optimized website for an eco-conscious fashion brand, emphasizing clean UI and sustainability storytelling.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://nextevo.one/" }]
     },
     {
-      image: nextuLogo,
+      image: nextevo1,
       projectName: "Nextevo – Sustainable Fashion Platform (II)",
       projectDesc:
         "A second Nextevo platform with refined UX, improved accessibility, and optimized performance across devices.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://nextevogroup.com/" }]
     },
 
     // =======================
     // Issara Institute Projects (5)
     // =======================
     {
-      image: nextuLogo,
+      image: goldendreams,
       projectName: "Golden Dreams",
       projectDesc:
         "A public awareness platform focused on ethical recruitment and worker protection, designed for accessibility and impact storytelling.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.issarainstitute.org/golden-dreams"
+          url: "https://app.golden-dreams.org/"
         }
       ]
     },
     {
-      image: nextuLogo,
+      image: issarainstitute,
       projectName: "Issara Institute Main Website",
       projectDesc:
         "The primary organizational website presenting Issara’s mission, programs, and impact with a focus on clarity, performance, and accessibility.",
@@ -455,14 +468,14 @@ const bigProjects = {
       ]
     },
     {
-      image: nextuLogo,
+      image: ilm,
       projectName: "ILM 3.0 – Inclusive Labor Monitoring System",
       projectDesc:
         "A secure internal system for collecting, managing, and analyzing labor data to support ethical supply chains and due diligence.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://ilm.issarainstitute.org/auth/login-page" }]
     },
     {
-      image: nextuLogo,
+      image: workervoice,
       projectName: "Worker Voices",
       projectDesc:
         "A worker engagement platform enabling meaningful, anonymous feedback to improve labor conditions across global supply chains.",
@@ -474,11 +487,11 @@ const bigProjects = {
       ]
     },
     {
-      image: nextuLogo,
+      image: cascade,
       projectName: "CASCADE Platform",
       projectDesc:
         "A data-driven intelligence platform delivering better business insights, ethical decision-making, and improved labor conditions across supply chains.",
-      footerLink: [{ name: "Project Overview", url: "#" }]
+      footerLink: [{ name: "Visit Website", url: "https://cascade.issarainstitute.org/" }]
     }
   ],
   display: true
@@ -497,7 +510,7 @@ const achievementSection = {
       title: "Myanmar Youth Technopreneurship – Honorable Mention",
       subtitle:
         "Recognized for innovative use of technology and entrepreneurship to address real-world challenges and create social impact.",
-      image: googleAssistantLogo,
+      image: myt,
       imageAlt: "Myanmar Youth Technopreneurship Award",
       footerLink: []
     },
@@ -505,7 +518,7 @@ const achievementSection = {
       title: "Deloitte Risk Intelligence Challenge – Runner Up",
       subtitle:
         "Awarded runner-up for developing a data-driven solution addressing risk intelligence and analytical problem-solving.",
-      image: googleAssistantLogo,
+      image: Deloitte,
       imageAlt: "Deloitte Risk Intelligence Challenge",
       footerLink: []
     },
@@ -513,7 +526,7 @@ const achievementSection = {
       title: "Employee of the Year",
       subtitle:
         "Awarded Employee of the Year at SCW Myanmar for outstanding performance, technical leadership, and consistent delivery excellence (2021 & 2022).",
-      image: googleAssistantLogo,
+      image: scwLogo,
       imageAlt: "Employee of the Year Award",
       footerLink: []
     }

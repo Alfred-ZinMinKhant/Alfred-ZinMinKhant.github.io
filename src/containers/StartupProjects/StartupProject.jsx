@@ -3,6 +3,7 @@ import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import { motion } from "framer-motion";
 import StyleContext from "../../contexts/StyleContext";
+import AnimateOnScroll from "../../components/AnimateOnScroll/AnimateOnScroll";
 
 export default function StartupProject() {
   function openUrlInNewTab(url) {
@@ -39,8 +40,12 @@ export default function StartupProject() {
           <div className="projects-container">
             {bigProjects.projects.map((project, i) => {
               return (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
                   className={
                     isDark
                       ? "dark-mode project-card project-card-dark"
@@ -53,6 +58,10 @@ export default function StartupProject() {
                         src={project.image}
                         alt={project.projectName}
                         className="card-image"
+                        loading="lazy"
+                        decoding="async"
+                        srcSet={`${project.image.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${project.image.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`}
+                        sizes="(max-width: 600px) 100vw, 300px"
                       ></img>
                     </div>
                   ) : null}
@@ -87,7 +96,7 @@ export default function StartupProject() {
                       </div>
                     ) : null}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

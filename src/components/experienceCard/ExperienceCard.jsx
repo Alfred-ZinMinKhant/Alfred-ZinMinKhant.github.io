@@ -45,7 +45,12 @@ export default function ExperienceCard({ cardInfo, isDark }) {
           src={cardInfo.companylogo}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
+          loading="lazy"
+          decoding="async"
+          srcSet={`${cardInfo.companylogo.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${cardInfo.companylogo.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`}
+          sizes="80px"
         />
+        
       </div>
       <div className="experience-text-details">
         <h5

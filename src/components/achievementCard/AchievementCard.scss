@@ -27,8 +27,16 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+/* make certificate cards equal height inside grid */
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .certificate-detail-div {
   text-align: center;
+  flex: 1; /* allow detail area to expand so cards match height */
 }
 .certificate-card:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
@@ -48,6 +56,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem 1rem;
+  align-items: stretch; /* ensure grid children stretch to same height */
 }
 .certificate-card-footer {
   display: flex;

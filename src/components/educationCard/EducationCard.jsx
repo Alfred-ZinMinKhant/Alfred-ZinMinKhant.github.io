@@ -30,6 +30,10 @@ export default function EducationCard({ school }) {
                 className="education-roundedimg"
                 src={school.logo}
                 alt={school.schoolName}
+                loading="lazy"
+                decoding="async"
+                srcSet={`${school.logo.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${school.logo.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`}
+                sizes="80px"
               />
             </div>
           )}

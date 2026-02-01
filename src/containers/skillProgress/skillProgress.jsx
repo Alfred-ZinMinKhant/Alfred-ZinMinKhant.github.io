@@ -2,7 +2,7 @@ import React from "react";
 import "./Progress.scss";
 import {illustration, techStack} from "../../portfolio";
 import { motion } from "framer-motion";
-import Build from "../../assets/lottie/Coding Slide.json";
+// Lottie JSON will be loaded dynamically by DisplayLottie via `animationPath`
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 
 export default function StackProgress() {
@@ -17,23 +17,32 @@ export default function StackProgress() {
                 width: exp.progressPercentage
               };
               return (
-                <div key={i} className="skill">
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="skill"
+                >
                   <p>{exp.Stack}</p>
                   <div className="meter">
                     <span style={progressStyle}></span>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
           <div className="skills-image">
             {illustration.animated ? (
-              <DisplayLottie animationData={Build} />
+              <DisplayLottie animationPath={"Coding Slide.json"} />
             ) : (
               <img
                 alt="Skills"
                 src={require("../../assets/images/skill.svg")}
+                loading="lazy"
+                decoding="async"
               />
             )}
           </div>

@@ -10,6 +10,14 @@
   max-width: 580px; /* constrain card width so single card rows appear centered */
 }
 
+/* Make card use full height in grid/flex containers so siblings match height */
+.experience-card,
+.experience-card-dark {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .experience-card-dark {
   position: relative;
   background-color: $darkBackground;
@@ -123,6 +131,7 @@
 .experience-text-details {
   padding: 1.5rem;
   margin-top: 2rem;
+  flex: 1; /* allow details to grow to fill card height */
 }
 
 /* Media Query */

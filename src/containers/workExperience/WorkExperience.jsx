@@ -17,18 +17,25 @@ export default function WorkExperience() {
               <div className="experience-cards-div">
                 {workExperiences.experience.map((card, i) => {
                   return (
-                    <ExperienceCard
+                    <motion.div
                       key={i}
-                      isDark={isDark}
-                      cardInfo={{
-                        company: card.company,
-                        desc: card.desc,
-                        date: card.date,
-                        companylogo: card.companylogo,
-                        role: card.role,
-                        descBullets: card.descBullets
-                      }}
-                    />
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.6, delay: i * 0.08 }}
+                    >
+                      <ExperienceCard
+                        isDark={isDark}
+                        cardInfo={{
+                          company: card.company,
+                          desc: card.desc,
+                          date: card.date,
+                          companylogo: card.companylogo,
+                          role: card.role,
+                          descBullets: card.descBullets
+                        }}
+                      />
+                    </motion.div>
                   );
                 })}
               </div>

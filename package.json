@@ -20,7 +20,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "start": "node fetch.js && vite",
-    "build": "node fetch.js && vite build",
+    "build": "npm run images:convert && node fetch.js && vite build",
+    "images:convert": "node scripts/convert-images.js",
     "deploy": "gh-pages -b master -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "sharp": "^0.32.0",
     "@babel/plugin-transform-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

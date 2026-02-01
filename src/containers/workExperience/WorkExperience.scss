@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 1rem 1rem;
   justify-items: center; /* center items when a row has fewer items */
+  align-items: stretch; /* ensure grid children stretch to equal height */
 }
 
 @media (max-width: 1024px) {

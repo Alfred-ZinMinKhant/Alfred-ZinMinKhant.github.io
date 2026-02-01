@@ -14,6 +14,7 @@ import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitterEmbed.jsx";
 import Profile from "./profile/Profile.jsx";
+import AnimateOnScroll from "../components/AnimateOnScroll/AnimateOnScroll";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
@@ -50,19 +51,45 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
+            <AnimateOnScroll>
+              <Greeting />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Skills />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <StackProgress />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Education />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <WorkExperience />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Projects />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <StartupProject />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Achievement />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Blogs />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Talks />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Twitter />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Podcast />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Profile />
+            </AnimateOnScroll>
             <ScrollToTopButton />
           </>
         )}

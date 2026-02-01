@@ -3,36 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting…</title>
-    <meta name="robots" content="noindex">
-    <link rel="canonical" href="https://alfred-zinminkhant.netlify.app/">
-    <script>
-      (function(){
-        var target = "https://alfred-zinminkhant.netlify.app/";
-        var appEntry = '/index.app.html';
-        try {
-          var host = location.hostname || '';
-          var isTargetHost = host === 'alfred-zinminkhant.netlify.app' || host === 'www.alfred-zinminkhant.netlify.app';
-          if (isTargetHost) {
-            // If we're on the Netlify host, load the real app entry
-            if (location.pathname !== appEntry) {
-              window.location.replace(appEntry);
-            }
-            return;
-          }
-          // If not on the Netlify host, redirect to the Netlify URL
-          var href = location.href || '';
-          var isAlreadyTarget = href === target || href === target.replace(/\/$/, '');
-          if (!isAlreadyTarget) {
-            window.location.replace(target);
-          }
-        } catch (e) {
-          // fall back to no-op on error
-        }
-      })();
-    </script>
+    <title>Zin Min Khant Portfolio</title>
+    <!-- link to public assets directly; Vite serves `public/` as root -->
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Font Awesome (required for social icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css">
   </head>
   <body>
-    <p>If you are not redirected automatically, follow this <a href="https://alfred-zinminkhant.netlify.app/">link to the new site</a>.</p>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 // To change portfolio colors globally go to the  _globalColor.scss file
 
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import workFromHomeAnimation from "./assets/lottie/work from home.json"; // use provided Lottie JSON for splash animation
 import Ncclogo from "./assets/images/Ncclogo.png";
 import oxfordlogo from "./assets/images/oxfordbrookes.webp";
 import issaraLogo from "./assets/images/issaraLogo.png"
@@ -33,8 +33,8 @@ import googleAssistantLogo from "./assets/images/googleAssistantLogo.webp";
 
 const splashScreen = {
   enabled: true, // set false to disable splash screen
-  animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  animation: workFromHomeAnimation,
+  duration: 3000 // Set animation duration as per your animation (ms)
 };
 
 // Summary And Greeting Section

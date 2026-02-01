@@ -20,8 +20,6 @@ export default function AchievementCard({ cardInfo, isDark }) {
           className="card-image"
           loading="lazy"
           decoding="async"
-          srcSet={`${cardInfo.image.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${cardInfo.image.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`}
-          sizes="(max-width: 600px) 100vw, 250px"
         />
       </div>
       <div className="certificate-detail-div">

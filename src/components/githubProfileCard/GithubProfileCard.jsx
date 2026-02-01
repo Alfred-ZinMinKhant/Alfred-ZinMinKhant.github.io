@@ -47,7 +47,7 @@ export default function GithubProfileCard({ prof }) {
             <SocialMedia />
           </div>
           <div className="image-content-profile">
-            <img src={prof.avatarUrl} alt={prof.name} className="profile-image" loading="lazy" decoding="async" srcSet={`${prof.avatarUrl.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${prof.avatarUrl.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`} sizes="80px" />
+            <img src={prof.avatarUrl} alt={prof.name} className="profile-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

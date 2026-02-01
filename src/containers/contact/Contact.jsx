@@ -3,7 +3,7 @@ import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {illustration, contactInfo} from "../../portfolio";
 import { motion } from "framer-motion";
-// Lottie JSON will be loaded dynamically by DisplayLottie via `animationPath`
+import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -54,7 +54,7 @@ export default function Contact() {
           </div>
           <div className="contact-image-div">
             {illustration.animated ? (
-              <DisplayLottie animationPath={"email.json"} />
+              <DisplayLottie animationData={email} />
             ) : (
               <img
                 alt="Man working"

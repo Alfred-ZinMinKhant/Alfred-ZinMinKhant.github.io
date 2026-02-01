@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import { motion } from "framer-motion";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-// Lottie JSON will be loaded dynamically by DisplayLottie via `animationPath`
+import landingPerson from "../../assets/lottie/Manandrobot.json";
 import resumePdf from "./Zin Min Khant Resume.pdf";
 import manOnTable from "../../assets/images/manOnTable.svg";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -55,7 +55,7 @@ export default function Greeting() {
           </div>
           <div className="greeting-image-div">
             {illustration.animated ? (
-              <DisplayLottie animationPath={"Manandrobot.json"} />
+              <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
                 alt="man sitting on table"

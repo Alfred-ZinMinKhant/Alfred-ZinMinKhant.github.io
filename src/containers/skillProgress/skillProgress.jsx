@@ -2,7 +2,7 @@ import React from "react";
 import "./Progress.scss";
 import {illustration, techStack} from "../../portfolio";
 import { motion } from "framer-motion";
-// Lottie JSON will be loaded dynamically by DisplayLottie via `animationPath`
+import Build from "../../assets/lottie/Coding Slide.json";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 
 export default function StackProgress() {
@@ -36,7 +36,7 @@ export default function StackProgress() {
 
           <div className="skills-image">
             {illustration.animated ? (
-              <DisplayLottie animationPath={"Coding Slide.json"} />
+              <DisplayLottie animationData={Build} />
             ) : (
               <img
                 alt="Skills"

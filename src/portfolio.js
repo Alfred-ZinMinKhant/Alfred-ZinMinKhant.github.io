@@ -3,8 +3,7 @@
 // To change portfolio colors globally go to the  _globalColor.scss file
 
 import emoji from "react-easy-emoji";
-// splash animation will be loaded dynamically by the app; set the filename here if you want a custom animation
-const splashAnimationPath = "splashAnimation.json"; // file in src/assets/lottie/
+import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 import Ncclogo from "./assets/images/Ncclogo.png";
 import oxfordlogo from "./assets/images/oxfordbrookes.webp";
 import issaraLogo from "./assets/images/issaraLogo.png"
@@ -34,7 +33,7 @@ import googleAssistantLogo from "./assets/images/googleAssistantLogo.webp";
 
 const splashScreen = {
   enabled: true, // set false to disable splash screen
-  animationPath: splashAnimationPath,
+  animation: splashAnimation,
   duration: 2000 // Set animation duration as per your animation
 };
 

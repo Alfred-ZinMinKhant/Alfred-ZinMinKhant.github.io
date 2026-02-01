@@ -60,8 +60,6 @@ export default function StartupProject() {
                         className="card-image"
                         loading="lazy"
                         decoding="async"
-                        srcSet={`${project.image.replace(/\.[a-zA-Z0-9]+$/, '.avif')} 1x, ${project.image.replace(/\.[a-zA-Z0-9]+$/, '.webp')} 1x`}
-                        sizes="(max-width: 600px) 100vw, 300px"
                       ></img>
                     </div>
                   ) : null}

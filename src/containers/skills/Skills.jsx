@@ -3,7 +3,7 @@ import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import {illustration, skillsSection} from "../../portfolio";
 import { motion } from "framer-motion";
-// Lottie JSON will be loaded dynamically by DisplayLottie via `animationPath`
+import codingPerson from "../../assets/lottie/coding.json";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -18,7 +18,7 @@ export default function Skills() {
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
           <div className="skills-image-div">
             {illustration.animated ? (
-              <DisplayLottie animationPath={"coding.json"} />
+              <DisplayLottie animationData={codingPerson} />
             ) : (
               <img
                 alt="Man Working"

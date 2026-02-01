@@ -380,7 +380,7 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
+  title: "Portfolio Highlights",
   subtitle: "KEY PLATFORMS AND PRODUCTS I HELPED BUILD AND LAUNCH",
   projects: [
     // =======================

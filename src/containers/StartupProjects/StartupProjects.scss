@@ -62,20 +62,14 @@
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* Force three equal columns on desktop */
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 1rem 1rem;
   justify-items: center; /* center cards when a row has fewer items */
   box-sizing: border-box;
   padding: 0 1rem;
   width: 100%;
   overflow: hidden;
-}
-
-/* On very large screens use 4 columns to avoid overly wide cards */
-@media (min-width: 1400px) {
-  .projects-container {
-    grid-template-columns: repeat(4, minmax(260px, 1fr));
-  }
 }
 
 /* Responsive: 2 columns on medium screens, 1 on small */

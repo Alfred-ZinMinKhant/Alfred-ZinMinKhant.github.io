@@ -9,10 +9,21 @@
     <script>
       (function(){
         var target = "https://alfred-zinminkhant.netlify.app/";
+        var appEntry = '/index.app.html';
         try {
-          var isTargetHost = location.hostname === 'alfred-zinminkhant.netlify.app' || location.hostname === 'www.alfred-zinminkhant.netlify.app';
-          var isAlreadyTarget = location.href === target || location.href === target.replace(/\/$/, '');
-          if (!isTargetHost && !isAlreadyTarget) {
+          var host = location.hostname || '';
+          var isTargetHost = host === 'alfred-zinminkhant.netlify.app' || host === 'www.alfred-zinminkhant.netlify.app';
+          if (isTargetHost) {
+            // If we're on the Netlify host, load the real app entry
+            if (location.pathname !== appEntry) {
+              window.location.replace(appEntry);
+            }
+            return;
+          }
+          // If not on the Netlify host, redirect to the Netlify URL
+          var href = location.href || '';
+          var isAlreadyTarget = href === target || href === target.replace(/\/$/, '');
+          if (!isAlreadyTarget) {
             window.location.replace(target);
           }
         } catch (e) {

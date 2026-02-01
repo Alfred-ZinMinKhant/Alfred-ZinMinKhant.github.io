@@ -6,8 +6,20 @@
     <title>Redirecting…</title>
     <meta name="robots" content="noindex">
     <link rel="canonical" href="https://alfred-zinminkhant.netlify.app/">
-    <meta http-equiv="refresh" content="0; url=https://alfred-zinminkhant.netlify.app/">
-    <script>window.location.replace("https://alfred-zinminkhant.netlify.app/");</script>
+    <script>
+      (function(){
+        var target = "https://alfred-zinminkhant.netlify.app/";
+        try {
+          var isTargetHost = location.hostname === 'alfred-zinminkhant.netlify.app' || location.hostname === 'www.alfred-zinminkhant.netlify.app';
+          var isAlreadyTarget = location.href === target || location.href === target.replace(/\/$/, '');
+          if (!isTargetHost && !isAlreadyTarget) {
+            window.location.replace(target);
+          }
+        } catch (e) {
+          // fall back to no-op on error
+        }
+      })();
+    </script>
   </head>
   <body>
     <p>If you are not redirected automatically, follow this <a href="https://alfred-zinminkhant.netlify.app/">link to the new site</a>.</p>

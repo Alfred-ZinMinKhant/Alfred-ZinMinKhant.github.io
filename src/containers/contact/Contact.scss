@@ -1,87 +1,302 @@
 @use "../../_globalColor" as *;
 
+/* ==========================================
+   CONTACT SECTION - PREMIUM CARD REDESIGN
+   ========================================== */
+
+.contact-margin-top {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+/* Main Contact Container */
 .contact-div-main {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+/* Premium Glassmorphism Contact Card */
+.contact-header {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient Border Effect */
+.contact-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.4),
+    rgba(91, 141, 239, 0.4),
+    rgba(167, 139, 250, 0.3)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.contact-header:hover::before {
+  opacity: 1;
+}
+
+.contact-header:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(100, 255, 218, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .contact-header {
+  background: rgba(10, 25, 47, 0.4);
+}
+
+.dark-mode .contact-header:hover {
+  background: rgba(10, 25, 47, 0.6);
 }
 
 .dark-mode a {
   color: $textColorDark;
 }
 
-.contact-div-main > * {
-  flex: 1;
+/* Contact Title with Gradient */
+.contact-title {
+  font-size: 56px;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  background: linear-gradient(135deg, #64ffda, #5b8def);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.contact-title {
-  font-size: 65px;
-  font-weight: 400;
+/* Subtitle */
+.contact-subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin: 0 0 40px 0;
+}
+
+.subTitle {
+  color: $subTitle;
+}
+
+/* Email Display - Interactive */
+.contact-text-div {
+  margin-top: 2rem;
 }
 
 .contact-detail,
 .contact-detail-email {
+  display: inline-block;
   margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #64ffda, #5b8def);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.contact-detail:hover,
+.contact-detail-email {
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  -webkit-text-fill-color: #64ffda;
+}
+
 .contact-detail-email:hover {
-  color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
+  background: rgba(100, 255, 218, 0.15);
+  border-color: rgba(100, 255, 218, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
 }
 
-.contact-subtitle {
-  text-transform: uppercase;
+/* Copy Tooltip */
+.contact-detail-email::after {
+  content: 'Click to copy';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  color: rgba(100, 255, 218, 0.8);
 }
 
-.contact-text-div {
-  margin-top: 1.5rem;
+.contact-detail-email:hover::after {
+  opacity: 1;
 }
 
-.contact-margin-top {
-  margin-top: 4rem;
+/* Copy Success Animation */
+.copy-success {
+  margin-left: 8px;
+  color: #64ffda;
+  font-size: 0.9em;
+  animation: fadeInScale 0.3s ease;
 }
 
-.contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
+.contact-detail-email.copied {
+  background: rgba(100, 255, 218, 0.2);
+  border-color: rgba(100, 255, 218, 0.6);
+}
+
+/* Social Media Section */
+.contact-text-div .social-media-div {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Social Media Pills - Glassmorphism */
+.contact-text-div .social-media-div a {
+  background: rgba(100, 255, 218, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  padding: 12px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contact-text-div .social-media-div a:hover {
+  background: rgba(100, 255, 218, 0.2);
+  border-color: rgba(100, 255, 218, 0.5);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 24px rgba(100, 255, 218, 0.3);
+}
+
+.contact-text-div .social-media-div svg,
+.contact-text-div .social-media-div i {
+  width: 24px;
+  height: 24px;
+  fill: #64ffda;
+  color: #64ffda;
+}
+
+/* Hide Image Div - Not Needed in Card Design */
+.contact-image-div {
+  display: none;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1380px) {
+  .contact-header {
+    padding: 50px 40px;
+  }
+
   .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
+    font-size: 48px;
+  }
+
+  .contact-detail-email {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-margin-top {
+    margin-top: 4rem;
+  }
+
+  .contact-header {
+    padding: 40px 30px;
+    border-radius: 20px;
   }
 
   .contact-title {
     font-size: 40px;
-    text-align: center;
   }
 
   .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
+    font-size: 12px;
+    margin-bottom: 30px;
   }
 
   .contact-detail,
   .contact-detail-email {
-    font-size: 20px;
+    font-size: 22px;
+    padding: 10px 20px;
   }
 
-  .contact-image-div {
-    display: none;
+  .contact-text-div .social-media-div a {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+    padding: 30px 20px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-detail-email {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .contact-text-div .social-media-div {
+    gap: 12px;
+  }
+
+  .contact-text-div .social-media-div a {
+    width: 40px;
+    height: 40px;
   }
 }

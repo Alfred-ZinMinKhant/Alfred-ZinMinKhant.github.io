@@ -21,8 +21,9 @@ export default function SplashScreen() {
         >
           <defs>
             <linearGradient id="splashGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stopColor={isDark ? "#9b8cff" : "#885bd5"} />
-              <stop offset="100%" stopColor={isDark ? "#ff9aa2" : "#ff7a7a"} />
+              <stop offset="0%" stopColor="#64FFDA" />
+              <stop offset="50%" stopColor="#5B8DEF" />
+              <stop offset="100%" stopColor="#64FFDA" />
             </linearGradient>
             <clipPath id="textClip">
               <rect className="clip-rect" x="0" y="0" width="800" height="120" />
@@ -33,8 +34,9 @@ export default function SplashScreen() {
             y="72"
             dominantBaseline="middle"
             textAnchor="middle"
-            fontFamily="Montserrat, Agustina Regular, cursive"
+            fontFamily="'Space Grotesk', 'Inter', sans-serif"
             fontSize="96"
+            fontWeight="700"
             fill="url(#splashGradient)"
             clipPath="url(#textClip)"
           >

@@ -15,53 +15,42 @@ export default function Skills() {
   return (
     <div className={isDark ? "dark-mode main" : "main"} id="skills">
       <div className="skills-main-div">
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-          <div className="skills-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={codingPerson} />
-            ) : (
-              <img
-                alt="Man Working"
-                src={require("../../assets/images/developerActivity.svg")}
-                loading="lazy"
-                decoding="async"
-              ></img>
-            )}
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-          <div className="skills-text-div">
-            <h1
-              className={isDark ? "dark-mode skills-heading" : "skills-heading"}
-            >
-              {skillsSection.title}{" "}
-            </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle skills-text-subtitle"
-                  : "subTitle skills-text-subtitle"
-              }
-            >
-              {skillsSection.subTitle}
-            </p>
-            <SoftwareSkill />
-            <div>
-              {skillsSection.skills.map((skills, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
-                    }
-                  >
-                    {skills}
-                  </p>
-                );
-              })}
-            </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8 }}
+          className="skills-text-div"
+        >
+          <h1
+            className={isDark ? "dark-mode skills-heading" : "skills-heading"}
+          >
+            {skillsSection.title}{" "}
+          </h1>
+          <p
+            className={
+              isDark
+                ? "dark-mode subTitle skills-text-subtitle"
+                : "subTitle skills-text-subtitle"
+            }
+          >
+            {skillsSection.subTitle}
+          </p>
+          <SoftwareSkill />
+          <div>
+            {skillsSection.skills.map((skills, i) => {
+              return (
+                <p
+                  key={i}
+                  className={
+                    isDark
+                      ? "dark-mode subTitle skills-text"
+                      : "subTitle skills-text"
+                  }
+                >
+                  {skills}
+                </p>
+              );
+            })}
           </div>
         </motion.div>
       </div>

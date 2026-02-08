@@ -1,52 +1,224 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
-  gap: 1rem 1rem;
-  justify-items: center; /* center items when a row has fewer items */
-  align-items: stretch; /* ensure grid children stretch to equal height */
-}
+@use "../../_globalColor" as *;
 
-@media (max-width: 1024px) {
-  .experience-cards-div {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .experience-cards-div {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0.75rem 0.75rem;
-  }
+/* Centered Timeline Layout with Clear Visual Line */
+.experience-container {
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 20px 60px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-heading {
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-.experience-container {
+.experience-cards-div {
+  position: relative;
+  padding: 0;
+}
+
+/* Strong center timeline line */
+.experience-cards-div::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, 
+    rgba(100, 255, 218, 0.2) 0%,
+    rgba(100, 255, 218, 0.8) 5%,
+    rgba(100, 255, 218, 0.8) 95%,
+    rgba(100, 255, 218, 0.2) 100%
+  );
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+  z-index: 1;
+}
+
+.experience-cards-div > div {
+  position: relative;
+  width: 50%;
+  padding: 0;
+  margin-bottom: 50px;
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  justify-content: flex-end;
 }
 
-.experience-container > * {
-  flex: 1;
+/* Alternate left and right */
+.experience-cards-div > div:nth-child(odd) {
+  padding-right: 50px;
+  margin-left: 0;
 }
 
-/* Media Query */
+.experience-cards-div > div:nth-child(even) {
+  margin-left: 50%;
+  padding-left: 50px;
+  justify-content: flex-start;
+}
 
+/* Prominent timeline dots */
+.experience-cards-div > div::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #64ffda, #5b8def);
+  z-index: 3;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 1),
+              0 0 0 10px rgba(100, 255, 218, 0.3),
+              0 0 20px rgba(100, 255, 218, 0.5);
+  transition: all 0.3s ease;
+}
+
+.experience-cards-div > div:nth-child(odd)::before {
+  right: -10px;
+}
+
+.experience-cards-div > div:nth-child(even)::before {
+  left: -10px;
+}
+
+/* Connecting lines from dots to cards */
+.experience-cards-div > div::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(100, 255, 218, 0.3),
+    rgba(100, 255, 218, 0.1)
+  );
+  z-index: 0;
+}
+
+.experience-cards-div > div:nth-child(odd)::after {
+  right: 0;
+  width: 50px;
+}
+
+.experience-cards-div > div:nth-child(even)::after {
+  left: 0;
+  width: 50px;
+}
+
+/* Dark mode adjustments */
+.dark-mode .experience-cards-div > div::before {
+  box-shadow: 0 0 0 5px rgba(10, 25, 47, 1),
+              0 0 0 10px rgba(100, 255, 218, 0.3),
+              0 0 20px rgba(100, 255, 218, 0.5);
+}
+
+/* Hover effect on dots */
+.experience-cards-div > div:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 1),
+              0 0 0 10px rgba(100, 255, 218, 0.5),
+              0 0 30px rgba(100, 255, 218, 0.8);
+}
+
+.dark-mode .experience-cards-div > div:hover::before {
+  box-shadow: 0 0 0 5px rgba(10, 25, 47, 1),
+              0 0 0 10px rgba(100, 255, 218, 0.5),
+              0 0 30px rgba(100, 255, 218, 0.8);
+}
+
+/* Last item */
+.experience-cards-div > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Queries */
 @media (max-width: 1380px) {
   .experience-heading {
-    font-size: 40px;
+    font-size: 42px;
   }
 }
 
 @media (max-width: 768px) {
+  /* Revert to left-aligned on mobile */
+  .experience-cards-div::before {
+    left: 20px;
+    transform: none;
+    width: 3px;
+  }
+
+  .experience-cards-div > div,
+  .experience-cards-div > div:nth-child(odd),
+  .experience-cards-div > div:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 60px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .experience-cards-div > div::before,
+  .experience-cards-div > div:nth-child(odd)::before,
+  .experience-cards-div > div:nth-child(even)::before {
+    left: 12px;
+    right: auto;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .experience-cards-div > div::after,
+  .experience-cards-div > div:nth-child(odd)::after,
+  .experience-cards-div > div:nth-child(even)::after {
+    left: 30px;
+    right: auto;
+    width: 30px;
+  }
+
   .experience-heading {
-    font-size: 30px;
-    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .experience-cards-div > div {
+    margin-bottom: 30px;
+  }
+
+  .experience-container {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-heading {
+    font-size: 28px;
+  }
+
+  .experience-cards-div > div,
+  .experience-cards-div > div:nth-child(odd),
+  .experience-cards-div > div:nth-child(even) {
+    padding-left: 50px;
+  }
+
+  .experience-cards-div::before {
+    left: 15px;
+  }
+
+  .experience-cards-div > div::before,
+  .experience-cards-div > div:nth-child(odd)::before,
+  .experience-cards-div > div:nth-child(even)::before {
+    left: 7px;
+  }
+
+  .experience-cards-div > div::after,
+  .experience-cards-div > div:nth-child(odd)::after,
+  .experience-cards-div > div:nth-child(even)::after {
+    left: 25px;
+    width: 25px;
   }
 }

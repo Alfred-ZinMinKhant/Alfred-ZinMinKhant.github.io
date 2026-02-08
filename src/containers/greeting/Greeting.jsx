@@ -20,37 +20,34 @@ export default function Greeting() {
     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
       <div className="greet-main" id="greeting">
         <div className="greeting-main">
-          <div className="greeting-text-div">
-            <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {greeting.title}{" "}
-               
-              </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                {greeting.subTitle}
-              </p>
-              <div id="resume" className="empty-div"></div>
-              <SocialMedia />
-              <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <a
-                    href={resumePdf}
-                    download="Resume.pdf"
-                    className="download-link-button"
-                  >
-                    <Button text="Download my resume" />
-                  </a>
-                )}
-              </div>
+          <div className="greeting-text">
+            <h1
+              className={isDark ? "dark-mode greeting-text" : "greeting-text"}
+            >
+              {greeting.title}{" "}
+            </h1>
+            <p
+              className={
+                isDark
+                  ? "dark-mode greeting-text-p"
+                  : "greeting-text-p subTitle"
+              }
+            >
+              {greeting.subTitle}
+            </p>
+            <div id="resume" className="empty-div"></div>
+            <SocialMedia />
+            <div className="button-greeting-div">
+              <Button text="Contact me" href="#contact" />
+              {greeting.resumeLink && (
+                <a
+                  href={resumePdf}
+                  download="Resume.pdf"
+                  className="download-link-button"
+                >
+                  <Button text="Download my resume" />
+                </a>
+              )}
             </div>
           </div>
           <div className="greeting-image-div">

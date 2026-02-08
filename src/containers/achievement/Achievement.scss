@@ -2,15 +2,21 @@
 
 .achievement-heading {
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
   line-height: normal;
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
 }
+
 .achievement-subtitle {
   text-transform: uppercase;
   margin: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }
+
 .subTitle {
   color: $subTitle;
 }

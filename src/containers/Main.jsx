@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header.jsx";
 import Greeting from "./greeting/Greeting.jsx";
+import AnimatedStats from "../components/animatedStats/AnimatedStats.jsx";
 import Skills from "./skills/Skills";
 import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
@@ -54,6 +55,7 @@ const Main = () => {
             <AnimateOnScroll>
               <Greeting />
             </AnimateOnScroll>
+            <AnimatedStats />
             <AnimateOnScroll>
               <Skills />
             </AnimateOnScroll>
@@ -61,16 +63,16 @@ const Main = () => {
               <StackProgress />
             </AnimateOnScroll>
             <AnimateOnScroll>
-              <Education />
-            </AnimateOnScroll>
-            <AnimateOnScroll>
-              <WorkExperience />
+              <StartupProject />
             </AnimateOnScroll>
             <AnimateOnScroll>
               <Projects />
             </AnimateOnScroll>
             <AnimateOnScroll>
-              <StartupProject />
+              <WorkExperience />
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <Education />
             </AnimateOnScroll>
             <AnimateOnScroll>
               <Achievement />

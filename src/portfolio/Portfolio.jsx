@@ -336,7 +336,10 @@ export default function Portfolio() {
 
       <nav className="nav" id="nav" ref={navRef}>
         <div className="wrap nav-inner">
-          <a href="#top" className="logo"><span className="dot" />Alfred</a>
+          <a href="#top" className="logo">
+            <span className="mark" aria-hidden="true">A</span>
+            <span className="word">Alfred<span className="word-accent">.</span></span>
+          </a>
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -618,7 +621,10 @@ export default function Portfolio() {
 
       <footer className="footer">
         <div className="wrap footer-inner">
-          <a href="#top" className="logo"><span className="dot" />Alfred</a>
+          <a href="#top" className="logo">
+            <span className="mark" aria-hidden="true">A</span>
+            <span className="word">Alfred<span className="word-accent">.</span></span>
+          </a>
           <p>© {new Date().getFullYear()} Zin Min Khant (Alfred) · Built &amp; deployed on Netlify.</p>
           <button className="to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top">
             <i className="fas fa-arrow-up" />

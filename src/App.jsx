@@ -1,13 +1,8 @@
 import React from "react";
-import "./App.scss";
-import Main from "./containers/Main.jsx";
+import Portfolio from "./portfolio/Portfolio.jsx";
 
 function App() {
-  return (
-    <div>
-      <Main />
-    </div>
-  );
+  return <Portfolio />;
 }
 
 export default App;
